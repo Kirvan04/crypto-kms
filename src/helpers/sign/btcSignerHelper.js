@@ -51,7 +51,7 @@ class BtcSignerHelper extends BaseSignerHelper {
             prepared.enableRBF();
         }
 
-        const hdKey = HDKey.fromExtendedKey(xPriv, this.networkConfig.bip32)
+        const hdKey = HDKey.fromExtendedKey(xPriv, this.networkConfig.bip84)
         let privKeys = transaction.inputs.map( (input) => {
             const derivationPath = `m/${input.change}/${input.derivationIndex}`;
             const derivedPrivKey = hdKey.derive(derivationPath)
