@@ -22,7 +22,7 @@ class BtcGeneratorHelper extends BaseGeneratorHelper {
      */
     generateAddress() {
         const pair = ECPair.makeRandom({network: this.networkConfig});
-        const address = payments.p2wpkh({pubkey: pair.publicKey, network: this.networkConfig}).address
+        const address = payments.p2pkh({pubkey: pair.publicKey, network: this.networkConfig}).address
 
         return new AddressDTO({
             address: address,
